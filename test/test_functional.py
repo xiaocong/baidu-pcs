@@ -42,8 +42,7 @@ class TestDelete(unittest.TestCase):
                                       'abc.txt')
         path = os.environ['APP_FOLDER'] + '/delete_abc.txt'
         filename = self.test_file
-        self.paths = [r['path'] for c, r in [self.yun.upload_single(
-            path=path, file=filename, ondup='newcopy') for i in range(5)]]
+        self.paths = [self.yun.upload_single(path=path, file=filename, ondup='newcopy')[1]['path'] for i in range(5)]
 
     def tearDown(self):
         self.yun.delete(self.paths)

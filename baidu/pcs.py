@@ -24,8 +24,7 @@ class Client(object):
         params = {'method': 'info',
                   'access_token': self.access_token
                   }
-        r = requests.get(self.URI['quota'],
-                         params=params)
+        r = requests.get(self.URI['quota'], params=params)
         return r.status_code, r.json()
 
     def upload_single(self, path, file, ondup='overwrite'):
