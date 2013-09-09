@@ -440,7 +440,7 @@ class Client(object):
         return r.status_code, r.json()
 
     def cancel_task(self, task_id, expires=None):
-        params = {'method': 'list_task',
+        params = {'method': 'cancel_task',
                   'access_token': self.access_token,
                   'task_id': task_id}
         if expires is not None:
